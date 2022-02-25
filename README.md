@@ -1,6 +1,10 @@
 # Gramineae
 小麦鯖の建築鯖用プラグイン  
 
+# TestServer
+IP: s.mclife.pro  
+PORT: 51082
+
 # TODO  
 - [x] プレイヤー1人用のフラットワールドを作成 
 - [x] 人のワールドに行けるようにする
