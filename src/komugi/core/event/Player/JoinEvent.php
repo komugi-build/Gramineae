@@ -23,7 +23,7 @@ class JoinEvent implements Listener
     {
         $player = $event->getPlayer();
         $name = $player->getName();
-        if (!$player->hasPlayedBefore()){
+        if (!$this->core->getServer()->getWorldManager()->getWorldByName($name)){
             $option = WorldCreationOptions::create();
             $option->setGeneratorClass(Flat::class);
             $this->core->getServer()->getWorldManager()->generateWorld($name ,$option);
@@ -31,6 +31,9 @@ class JoinEvent implements Listener
             $player->sendMessage('ワールドを作成しました');
             $player->teleport($this->core->getServer()->getWorldManager()->getWorldByName($name)->getSpawnLocation());
             $player->setGamemode(GameMode::CREATIVE());
+            $event->setJoinMessage('§b >> '.$name.'さんが"初"参加しました');
+        }else{
+            $event->setJoinMessage('§b >> '.$name.'さんが参加しました');
         }
     }
 }

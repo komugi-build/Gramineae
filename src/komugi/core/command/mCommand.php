@@ -24,7 +24,7 @@ class mCommand extends Command
             $name = $sender->getName();
             $sender->teleport($this->core->getServer()->getWorldManager()->getWorldByName($name)->getSpawnLocation());
             $sender->setGamemode(GameMode::CREATIVE());
-            $sender->sendMessage('自分のワールドにtpしました');
+            $sender->sendMessage('§b >> 自分のワールドにtpしました');
         }
         return true;
     }

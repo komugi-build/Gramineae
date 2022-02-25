@@ -21,12 +21,16 @@ class tCommand extends Command
     public function execute(CommandSender $sender, string $commandLabel, array $args)
     {
         if ($sender instanceof Player){
-            if ($this->core->getServer()->getWorldManager()->getWorldByName($args[0])){
-                $sender->teleport($this->core->getServer()->getWorldManager()->getWorldByName($args[0])->getSpawnLocation());
-                $sender->setGamemode(GameMode::ADVENTURE());
-                $sender->sendMessage($args[0].'さんのワールドに飛びました');
+            if (isset($args[0])){
+                if ($this->core->getServer()->getWorldManager()->getWorldByName($args[0])){
+                    $sender->teleport($this->core->getServer()->getWorldManager()->getWorldByName($args[0])->getSpawnLocation());
+                    $sender->setGamemode(GameMode::ADVENTURE());
+                    $sender->sendMessage('§b >> '.$args[0].'さんのワールドに入りました');
+                }else{
+                    $sender->sendMessage('§c >> '.$args[0].'さんが存在しません。(大文字小文字を見てください)');
+                }
             }else{
-                $sender->sendMessage('存在しません');
+                $sender->sendMessage('/t (player名)');
             }
         }
         return true;
