@@ -1,0 +1,7 @@
+---
+name: Gramineae
+author: komugi-mcbe
+api: 4.0.0
+main: komugi\core\Gramineae
+version: 0.1.0
+...
