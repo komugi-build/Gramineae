@@ -25,6 +25,7 @@ class mCommand extends Command
             $sender->teleport($this->core->getServer()->getWorldManager()->getWorldByName($name)->getSpawnLocation());
             $sender->setGamemode(GameMode::CREATIVE());
             $sender->sendMessage('§b >> 自分のワールドにtpしました');
+            $sender->sendpopup('§7クリエイティブーモードに変更しました');
         }
         return true;
     }

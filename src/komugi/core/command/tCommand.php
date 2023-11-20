@@ -30,7 +30,7 @@ class tCommand extends Command
                     $sender->sendMessage('§c >> '.$args[0].'さんが存在しません。(大文字小文字を見てください)');
                 }
             }else{
-                $sender->sendMessage('/t (player名)');
+                $sender->sendMessage('§c >> /t {Player名}で使用してください');
             }
         }
         return true;
